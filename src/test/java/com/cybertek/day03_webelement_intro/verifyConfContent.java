@@ -14,11 +14,12 @@ public class verifyConfContent {
         driver.findElement(By.linkText("Forgot Password")).click();
         WebElement emailInputBox = driver.findElement(By.name("email"));
         emailInputBox.sendKeys("test@asd.com");
-      String actualaEmail = emailInputBox.getAttribute("value");
+        String actualaEmail = emailInputBox.getAttribute("value");
         System.out.println("actualaEmail = " + actualaEmail);
         if (actualaEmail.contentEquals("test@asd.com")) {
             System.out.println(" test PASS");
-        }driver.quit();
+        }
+        driver.quit();
     }
 }
 
