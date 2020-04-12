@@ -1,6 +1,5 @@
-package com.cybertek.tests.day07_testNG;
+package com.cybertek.tests.day07_testNGfirstDay;
 
-import com.google.gson.internal.bind.util.ISO8601Utils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

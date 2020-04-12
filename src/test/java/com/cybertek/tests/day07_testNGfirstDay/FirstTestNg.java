@@ -1,6 +1,5 @@
-package com.cybertek.tests.day07_testNG;
+package com.cybertek.tests.day07_testNGfirstDay;
 
-import com.cybertek.tests.day04_basic_locators.IDlocators;
 import org.testng.annotations.Test;
 
 public class FirstTestNg {

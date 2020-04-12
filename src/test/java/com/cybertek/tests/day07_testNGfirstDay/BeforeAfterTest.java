@@ -1,4 +1,4 @@
-package com.cybertek.tests.day07_testNG;
+package com.cybertek.tests.day07_testNGfirstDay;
 
 import org.testng.annotations.*;
 
