@@ -1,11 +1,8 @@
-package com.cybertek.day03_webelement_intro;
+package com.cybertek.tests.day03_webelement_intro;
 
 import com.cybertek.utilities.WebDriverFactory;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class NameDemo {
 

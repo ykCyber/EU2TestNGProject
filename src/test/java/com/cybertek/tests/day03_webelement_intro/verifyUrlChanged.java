@@ -1,4 +1,4 @@
-package com.cybertek.day03_webelement_intro;
+package com.cybertek.tests.day03_webelement_intro;
 
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
