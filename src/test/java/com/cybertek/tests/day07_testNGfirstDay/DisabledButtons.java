@@ -15,7 +15,11 @@ public class DisabledButtons {
         driver.manage().window().maximize();
         WebElement greenButton = driver.findElement(By.id("green"));
         System.out.println("greenButton.isEnabled() = " + greenButton.isEnabled());
-        Assert.assertFalse(greenButton.isEnabled(),"Green Button Disen");
+        Assert.assertFalse(greenButton.isEnabled(), "Green Button Disabled");
+    }
+
+    @Test
+    public void Test2() {
     }
 }
 

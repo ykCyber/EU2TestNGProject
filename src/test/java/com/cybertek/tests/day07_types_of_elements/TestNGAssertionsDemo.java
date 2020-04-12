@@ -1,4 +1,4 @@
-package com.cybertek.tests.day07_testNGfirstDay;
+package com.cybertek.tests.day07_types_of_elements;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
