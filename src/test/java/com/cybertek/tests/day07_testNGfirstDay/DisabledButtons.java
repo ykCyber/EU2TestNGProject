@@ -8,6 +8,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class DisabledButtons {
+    public static void main(String[] args) {
+
+    }
+
     @Test
     public void radioTest1() {
         WebDriver driver = WebDriverFactory.getDriver("opera");
@@ -15,11 +19,9 @@ public class DisabledButtons {
         driver.manage().window().maximize();
         WebElement greenButton = driver.findElement(By.id("green"));
         System.out.println("greenButton.isEnabled() = " + greenButton.isEnabled());
+        System.out.println("greenButton.isEnabled() = " + greenButton.isEnabled());
         Assert.assertFalse(greenButton.isEnabled(), "Green Button Disabled");
+        long[] alfa = new long[3];
     }
 
-    @Test
-    public void Test2() {
-    }
 }
-
