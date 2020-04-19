@@ -28,6 +28,10 @@ public class IDlocators {
         driver.findElement(By.xpath("//button")).click();
         String alfa = driver.findElement(By.tagName("h3")).getText();
         System.out.println("alfa = " + alfa);
-        ;
+        if (dontClickButton.isSelected()) {
+
+        }
+
+
     }
 }

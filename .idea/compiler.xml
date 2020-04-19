@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="EU2TestNGProject" />
-        <module name="EUTestNGProject" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="13" />
