@@ -34,7 +34,7 @@ public class MultipleWindows {
         System.out.println("driver.getWindowHandle()After = " + driver.getWindowHandle());
         System.out.println(driver.getTitle());
         driver.navigate().to("https://www.google.com.tr/");
-                Set<String> windowsIds = driver.getWindowHandles();
+        Set<String> windowsIds = driver.getWindowHandles();
         Iterator<String> iter = windowsIds.iterator();
         String oldWindow = iter.next();
         String newWindow = iter.next();
