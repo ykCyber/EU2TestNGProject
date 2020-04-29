@@ -1,0 +1,30 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Select_birlikteRun" type="TestNG" editBeforeRun="true" singleton="false">
+    <module name="EU2TestNGProject" />
+    <useClassPathOnly />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.cybertek.tests.day09.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="SUITE_NAME" value="" />
+    <option name="PACKAGE_NAME" value="com.cybertek.tests.day09" />
+    <option name="MAIN_CLASS_NAME" value="com.cybertek.tests.day09.SelectClassTest" />
+    <option name="METHOD_NAME" value="test1" />
+    <option name="GROUP_NAME" value="" />
+    <option name="TEST_OBJECT" value="METHOD" />
+    <option name="PARAMETERS" value="" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\mksimsir\IdeaProjects\EU2TestNGProject" />
+    <option name="TEST_SEARCH_SCOPE">
+      <value defaultName="moduleWithDependencies" />
+    </option>
+    <option name="PROPERTIES_FILE" value="" />
+    <properties />
+    <listeners />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
