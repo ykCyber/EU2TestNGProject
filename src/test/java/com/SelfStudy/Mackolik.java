@@ -33,6 +33,7 @@ public class Mackolik {
         List<WebElement> clubPoints = driver.findElements(By.xpath("//tbody//tr//td[12]"));
         for (int i = 0; i < clubNames.size(); i++) {
             System.out.println(clubNames.get(i).getText() + " " + clubPoints.get(i).getText() + "Puan");
+
         }
     }
 }
