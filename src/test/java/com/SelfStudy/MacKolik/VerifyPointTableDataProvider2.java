@@ -1,4 +1,4 @@
-package com.SelfStudy;
+package com.SelfStudy.MacKolik;
 
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
@@ -11,17 +11,15 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.awt.*;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class MackolikDataProvider2 {
+public class VerifyPointTableDataProvider2 {
     WebDriver driver = WebDriverFactory.getDriver("opera");
 
     @DataProvider
-    public static Object[] temaNameProvider() {
-        String[] teamNames = new String[]{"Trabzonspor", "AnkaraGucu", "Galatasaray", "Sivasspor", "Beşiktaş", "Alanyaspor", "Fenerbahçe", "Göztepe", "Gaziantep FK", "Denizlispor", "Antalyaspor", "Gençlerbirliği", "Kasımpaşa", "Konyaspor", "Yeni Malatya", "Ç. Rizespor", "MKE Ankaragücü", "Kayserispor"};
+    public static Object[] teamNameProvider() {
 
-        return teamNames;
+        return new String[]{"Trabzonspor", "AnkaraGucu", "Galatasaray", "Sivasspor", "Beşiktaş", "Alanyaspor", "Fenerbahçe", "Göztepe", "Gaziantep FK", "Denizlispor", "Antalyaspor", "Gençlerbirliği", "Kasımpaşa", "Konyaspor", "Yeni Malatya", "Ç. Rizespor", "MKE Ankaragücü", "Kayserispor"};
     }
 
     @BeforeMethod
@@ -35,7 +33,7 @@ public class MackolikDataProvider2 {
         Thread.sleep(2000);
     }
 
-    @Test(dataProvider = "temaNameProvider")
+    @Test(dataProvider = "teamNameProvider")
     public void test(String teamNameFromDP) throws InterruptedException, AWTException {
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -45,9 +43,18 @@ public class MackolikDataProvider2 {
 //      //  driver.findElement(By.cssSelector("a[data-ga-label=\"Futbol\"]")).click();
 //       // driver.findElement(By.xpath("(//div[contains(.,' Kabul Et ')]//a)[2]")).click();
         Robot robot = new Robot();
+        robot.mouseWheel(10);
+        Thread.sleep(1000);
+        robot.mouseWheel(-10);
+        Thread.sleep(1000);
         robot.mouseWheel(5);
         Thread.sleep(1000);
         robot.mouseWheel(-5);
+        Thread.sleep(1000);
+        robot.mouseWheel(3);
+        Thread.sleep(1000);
+        robot.mouseWheel(-3);
+        Thread.sleep(1000);
 
         String clubnWonCSS = "[data-team-name^=\"" + teamNameFromDP + "\"]>td:nth-of-type(6)";
         String clubnDeuceCSS = "[data-team-name^=\"" + teamNameFromDP + "\"]>td:nth-of-type(7)";
@@ -59,7 +66,7 @@ public class MackolikDataProvider2 {
         int deuce = Integer.parseInt(clubDeuce.getText().trim());
         int point = Integer.parseInt(clubPoints.getText().trim());
         System.out.printf("%s %nPoints :%3d   Won: %3d   Deuce :%3d%n", teamNameFromDP, point, won, deuce);
-        Assert.assertTrue(((won * 3) + deuce) == point, teamNameFromDP + " point's is wrong ");
+        Assert.assertEquals(point, ((won * 3) + deuce), teamNameFromDP + " point's is wrong ");
 
 
     }

@@ -1,4 +1,4 @@
-package com.SelfStudy;
+package com.SelfStudy.NewTab_ROBOT;
 
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
@@ -42,6 +42,7 @@ public class RobotNewTab {
             robot.keyPress(KeyEvent.VK_T);
             robot.keyRelease(KeyEvent.VK_CONTROL);
             robot.keyRelease(KeyEvent.VK_T);
+
         }
         Thread.sleep(5000);
         Object [] links = {"https://www.javatpoint.com/java-listiterator-add-method",

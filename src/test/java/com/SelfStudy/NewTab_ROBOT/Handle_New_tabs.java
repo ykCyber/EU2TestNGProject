@@ -1,4 +1,4 @@
-package com.SelfStudy;
+package com.SelfStudy.NewTab_ROBOT;
 
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.util.List;
-import java.util.Set;
 
 public class Handle_New_tabs {
     @Test

@@ -1,4 +1,4 @@
-package com.SelfStudy;
+package com.SelfStudy.NewTab_ROBOT;
 
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;

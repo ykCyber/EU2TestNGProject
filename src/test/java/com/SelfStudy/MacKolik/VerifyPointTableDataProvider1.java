@@ -1,4 +1,4 @@
-package com.SelfStudy;
+package com.SelfStudy.MacKolik;
 
 import com.cybertek.utilities.WebDriverFactory;
 import com.cybertek.utilities.WebDriverManuelSetFactory;
@@ -10,7 +10,7 @@ import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
-public class MackolikDataProvider {
+public class VerifyPointTableDataProvider1 {
     WebDriver driver = WebDriverFactory.getDriver("chrome");
     @DataProvider
     public static Object[] teamName() {
