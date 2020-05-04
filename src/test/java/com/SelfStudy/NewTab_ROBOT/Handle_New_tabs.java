@@ -17,7 +17,6 @@ public class Handle_New_tabs {
         WebDriverWait wait = new WebDriverWait(driver,10 );
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("msg"))));
         List<String> handles = (List<String>) driver.getWindowHandles();
-
-
+        
     }
 }
