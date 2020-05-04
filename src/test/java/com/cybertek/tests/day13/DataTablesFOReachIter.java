@@ -1,21 +1,17 @@
 package com.cybertek.tests.day13;
 
 import com.cybertek.utilities.WebDriverFactory;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
+
+;import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
-import static java.lang.Thread.sleep;
-import static org.openqa.selenium.By.xpath;
 
 public class DataTablesFOReachIter {
     WebDriver driver = WebDriverFactory.getManuelDriver("chrome");
@@ -29,7 +25,7 @@ public class DataTablesFOReachIter {
 
     @AfterTest
     public void afterMethod() throws InterruptedException {
-        sleep(2000);
+        Thread.sleep(2000);
         driver.quit();
     }
 
@@ -54,13 +50,12 @@ public class DataTablesFOReachIter {
 
 
     }
-
-    @Test
+     @Test
     public void test() {
         driver.get("http://practice.cybertekschool.com/tables");
 
-        List<WebElement> headers = driver.findElements(xpath("(//thead)[1]//span"));// 6 baslik 1 i fazla
-        List<WebElement> numOfPeople = driver.findElements(xpath("(//tbody)[1]//tr//td[1]"));//kisi sayisini veren dizi
+        List<WebElement> headers = driver.findElements(By.xpath("(//thead)[1]//span"));// 6 baslik 1 i fazla
+        List<WebElement> numOfPeople = driver.findElements(By.xpath("(//tbody)[1]//tr//td[1]"));//kisi sayisini veren dizi
 //        for (int i = 1; i <= numOfPeople.size(); i++) {//kisi sayisi
 //            Iterator<WebElement> headerIter = headers.iterator();
 //            for (int j = 1; j <= headers.size() - 1; j++) {//5 baslik
@@ -77,21 +72,20 @@ public class DataTablesFOReachIter {
     public void cellByCell() {
         driver.get("http://practice.cybertekschool.com/tables");
 
-        List<WebElement> titles = driver.findElements(xpath("(//tr)[1]/th"));
+        List<WebElement> titles = driver.findElements(By.xpath("(//tr)[1]/th"));
         //titles  = toplam 6 element( buradan getText ile basliklari alacagiz
-
-        List<WebElement> allCells = driver.findElements(xpath("(//tbody)[1]//tr//td"));
+        List<WebElement> allCells = driver.findElements(By.xpath("(//tbody)[1]//tr//td"));
         //allCells = toplam 24 element (buradan getText ile hucrelerin icindeki datayi teker teker alacagiz
 
         Iterator<WebElement> titleIter = titles.iterator();
         // titleIter.next() basliklari teker teker yazdirmamiza yarayacak (.getText() ile)
         //
 
-
         for (WebElement cell : allCells) {// 24 hucreyi liste seklinde barindiran allCells icin for each loop kuruyoruz
 
             String title = titleIter.next().getText();//-1. indexten 0 git ve text'ini al=(lastName)
             // ikinci iterasyonda 0 dan 1 git ( firsname)...........
+
 
             if (titleIter.hasNext() == false) {
                 //sonda action-edit var onu yazdirmak istemiyorum
