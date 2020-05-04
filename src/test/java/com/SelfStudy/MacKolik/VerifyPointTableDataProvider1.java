@@ -10,6 +10,8 @@ import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.openqa.selenium.By.xpath;
+
 public class VerifyPointTableDataProvider1 {
     WebDriver driver = WebDriverFactory.getDriver("chrome");
     @DataProvider
@@ -35,7 +37,7 @@ public class VerifyPointTableDataProvider1 {
         driver.get("https://www.mackolik.com/puan-durumu/t%C3%BCrkiye-s%C3%BCper-lig/482ofyysbdbeoxauk19yg7tdt");
         String team = clubName;
         String xpath = "//tr[@data-team-name='" + team + "']";
-        WebElement element = driver.findElement(By.xpath(xpath));
+        WebElement element = driver.findElement(xpath(xpath));
         String[] tablo = element.getText().split(" ");
         int wonPoints = 3 * Integer.parseInt(tablo[3]) + Integer.parseInt(tablo[4]);
         int tablePoint = Integer.parseInt(tablo[9]);
