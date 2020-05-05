@@ -1,7 +1,6 @@
 package com.SelfStudy.MacKolik;
 
 import com.cybertek.utilities.WebDriverFactory;
-import com.cybertek.utilities.WebDriverManuelSetFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
