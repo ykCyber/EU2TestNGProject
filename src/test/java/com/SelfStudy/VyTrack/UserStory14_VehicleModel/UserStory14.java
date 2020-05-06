@@ -40,8 +40,11 @@ public class UserStory14 {
         driver.findElement(By.xpath("//span[@class='title title-level-1'][contains(text(),'Fleet')]")).click();
         driver.findElement(By.xpath("//span[contains(text(),'Vehicles Model')]")).click();
         String actualResult = driver.getTitle();
+
         String expectedResult = "Vehicles Model";
         System.out.println("driver.getTitle() = " + driver.getTitle());
+        System.out.println(actualResult);
+        System.out.println(expectedResult);
         Assert.assertFalse(actualResult.contains(expectedResult));
     }
     public void login(String userName,String password){
