@@ -1,4 +1,4 @@
-package com.SelfStudy.ScannerTest;
+package com.SelfStudy.Others;
 
 import static org.junit.Assert.*;
 

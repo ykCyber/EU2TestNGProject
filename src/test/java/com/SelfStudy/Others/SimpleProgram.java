@@ -1,4 +1,4 @@
-package com.SelfStudy.ScannerTest;
+package com.SelfStudy.Others;
 import java.util.Scanner;
 public class SimpleProgram {
     public static void main(String[] args) {
