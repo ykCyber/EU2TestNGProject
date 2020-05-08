@@ -19,10 +19,9 @@ public class VerifyPointTableDataProvider2 {
 
     @DataProvider
     public static Object[] teamNameProvider() {
+        return new String[]{"Trabzonspor" ,  "AnkaraGucu", "Galatasaray", "Sivasspor","Beşiktaş", "Alanyaspor", "Fenerbahçe", "Göztepe", "Gaziantep FK", "Denizlispor", "Antalyaspor", "Gençlerbirliği", "Kasımpaşa", "Konyaspor", "Yeni Malatya", "Ç. Rizespor", "MKE Ankaragücü", "Kayserispor"};
 
-        return new String[]{"Trabzonspor", "AnkaraGucu", "Galatasaray", "Sivasspor", "Beşiktaş", "Alanyaspor", "Fenerbahçe", "Göztepe", "Gaziantep FK", "Denizlispor", "Antalyaspor", "Gençlerbirliği", "Kasımpaşa", "Konyaspor", "Yeni Malatya", "Ç. Rizespor", "MKE Ankaragücü", "Kayserispor"};
     }
-
     @BeforeMethod
     public void setUp() {
         driver.manage().window().maximize();
