@@ -19,23 +19,25 @@ public class UserStory14 {
 
     @DataProvider
     public static Object[][] truckDriverredentails() {
-        return new Object[][]{{"user18","UserUser123"}};
+        return new Object[][]{{"user18", "UserUser123"}};
     }
 
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         driver.get("https://qa1.vytrack.com");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
+
     @AfterMethod
-    public void afterMethod () throws InterruptedException{
+    public void afterMethod() throws InterruptedException {
         Thread.sleep(2000);
     }
+
     @Test(dataProvider = "truckDriverredentails")
     //Acceptance Criteria 2: Verify that Store manager or Sales manager should be able to create new Vehicle model
-    public void ac2 (String userName,String password) throws InterruptedException {
-        login(userName,password);
+    public void ac2(String userName, String password) throws InterruptedException {
+        login(userName, password);
 
         driver.findElement(By.xpath("//span[@class='title title-level-1'][contains(text(),'Fleet')]")).click();
         driver.findElement(By.xpath("//span[contains(text(),'Vehicles Model')]")).click();
@@ -47,11 +49,12 @@ public class UserStory14 {
         System.out.println(expectedResult);
         Assert.assertFalse(actualResult.contains(expectedResult));
     }
-    public void login(String userName,String password){
+
+    public void login(String userName, String password) {
         driver.findElement(By.id("prependedInput")).sendKeys(userName);
         driver.findElement(By.id("prependedInput2")).sendKeys(password, Keys.ENTER);
-        WebDriverWait wait =new WebDriverWait(driver,10);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.titleIs("Dashboard"));
-        Assert.assertTrue(driver.getTitle().contentEquals("Dashboard"),"Page title is \"Dashboard\""+" "+driver.getTitle());
+        Assert.assertTrue(driver.getTitle().contentEquals("Dashboard"), "Page title is \"Dashboard\"" + " " + driver.getTitle());
     }
 }
