@@ -4,6 +4,7 @@ import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -14,7 +15,7 @@ import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
 public class VerifyPointTableDataProvider2 {
-    WebDriver driver = WebDriverFactory.getDriver("opera");
+    WebDriver driver = WebDriverFactory.getManuelDriver("chrome");
 
     @DataProvider
     public static Object[] teamNameProvider() {
@@ -37,25 +38,18 @@ public class VerifyPointTableDataProvider2 {
     public void test(String teamNameFromDP) throws InterruptedException, AWTException {
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.get("https://www.mackolik.com/puan-durumu/t%C3%BCrkiye-s%C3%BCper-lig/482ofyysbdbeoxauk19yg7tdt");
-//        driver.findElement(By.linkText("Futbol")).click();
-//        driver.findElement(By.linkText("Puan Durumu")).click();
-//      //  driver.findElement(By.cssSelector("a[data-ga-label=\"Futbol\"]")).click();
-//       // driver.findElement(By.xpath("(//div[contains(.,' Kabul Et ')]//a)[2]")).click();
-        Robot robot = new Robot();
-        robot.mouseWheel(10);
-        Thread.sleep(1000);
-        robot.mouseWheel(-10);
-        Thread.sleep(1000);
-        robot.mouseWheel(5);
-        Thread.sleep(1000);
-        robot.mouseWheel(-5);
-        Thread.sleep(1000);
-        robot.mouseWheel(3);
-        Thread.sleep(1000);
-        robot.mouseWheel(-3);
-        Thread.sleep(1000);
+        driver.get("https://mackolik.com");
+        WebElement futbol = driver.findElement(By.cssSelector("[data-target='soccer']"));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(futbol).click().perform();
+        WebElement puanDurumu = driver.findElement(By.xpath("(//a[@title='Puan Durumu'])[1]"));
+        actions.moveToElement(puanDurumu).click().perform();
 
+
+//        driver.findElement(By.linkText("Futb")).click();
+//        driver.findElement(By.linkText("Puan Duru")).click();
+
+        // [data-team-name^="Trabzonspor"]>td:nth-of-type(6)
         String clubnWonCSS = "[data-team-name^=\"" + teamNameFromDP + "\"]>td:nth-of-type(6)";
         String clubnDeuceCSS = "[data-team-name^=\"" + teamNameFromDP + "\"]>td:nth-of-type(7)";
         String clubnPointsCSS = "[data-team-name^=\"" + teamNameFromDP + "\"]>td:nth-of-type(12)";

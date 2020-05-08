@@ -4,6 +4,7 @@ import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -33,7 +34,12 @@ public class VerifyPointTableDataProvider1 {
 
     @Test(dataProvider = "teamName")
     public void test(String clubName) {
-        driver.get("https://www.mackolik.com/puan-durumu/t%C3%BCrkiye-s%C3%BCper-lig/482ofyysbdbeoxauk19yg7tdt");
+        driver.get("https://mackolik.com");
+        WebElement futbol = driver.findElement(By.cssSelector("[data-target='soccer']"));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(futbol).click().perform();
+        WebElement puanDurumu = driver.findElement(By.xpath("(//a[@title='Puan Durumu'])[1]"));
+        actions.moveToElement(puanDurumu).click().perform();
         String team = clubName;
         String xpath = "//tr[@data-team-name='" + team + "']";
         WebElement element = driver.findElement(xpath(xpath));

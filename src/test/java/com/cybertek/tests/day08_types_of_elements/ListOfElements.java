@@ -12,7 +12,7 @@ import java.util.List;
 public class ListOfElements {
     @Test
      public void test(){
-        WebDriver driver = WebDriverFactory.getDriver("opera");
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.get("http://practice.cybertekschool.com/multiple_buttons");
         driver.manage().window().maximize();
         List<WebElement> buttons = driver.findElements(By.tagName("buttons"));
