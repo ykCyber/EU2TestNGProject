@@ -15,7 +15,7 @@ import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
 public class VerifyPointTableDataProvider2 {
-    WebDriver driver = WebDriverFactory.getManuelDriver("chrome");
+    WebDriver driver = WebDriverFactory.getDriver("chrome");
 
     @DataProvider
     public static Object[] teamNameProvider() {
