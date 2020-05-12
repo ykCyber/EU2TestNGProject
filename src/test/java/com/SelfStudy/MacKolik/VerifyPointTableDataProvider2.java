@@ -40,7 +40,7 @@ public class VerifyPointTableDataProvider2 {
         driver.get("https://mackolik.com");
         WebElement futbol = driver.findElement(By.cssSelector("[data-target='soccer']"));
         Actions actions = new Actions(driver);
-        actions.moveToElement(futbol).click().perform();
+        actions.moveToElement(futbol).click().build().perform();
         WebElement puanDurumu = driver.findElement(By.xpath("(//a[@title='Puan Durumu'])[1]"));
         actions.moveToElement(puanDurumu).click().perform();
 
