@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Select_birlikteRun" type="TestNG" editBeforeRun="true" singleton="false">
+  <configuration default="false" type="TestNG" editBeforeRun="true" singleton="false">
     <module name="EU2TestNGProject" />
     <useClassPathOnly />
     <extension name="coverage">
