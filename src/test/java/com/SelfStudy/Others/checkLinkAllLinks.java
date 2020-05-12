@@ -24,7 +24,7 @@ public class checkLinkAllLinks {
         List<WebElement> linkElements = driver.findElements(By.tagName("a"));
         Set<String> withOutDubs = new HashSet<String>(Arrays.asList(linkElements.toString()));
         Consumer<? super WebElement> link = null;
-        linkElements.forEach(link >);
+
         
                 System.out.println("linkElements.size() = " + linkElements.size());
         Set<String> removedDubs = new HashSet();
