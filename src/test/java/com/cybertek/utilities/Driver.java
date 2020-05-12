@@ -9,7 +9,6 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaDriver;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 
 public class Driver {
 
@@ -19,7 +18,7 @@ public class Driver {
     private Driver() {
     }
 
-    public static WebDriver get() throws FileNotFoundException {
+    public static WebDriver get() {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addExtensions(new File("C:\\Users\\Mustafa\\git\\EU2TestNGProject\\drivers\\chropath_6_1_4_0.crx"));
         if (driver == null) {
@@ -30,6 +29,7 @@ public class Driver {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(chromeOptions);
+                    System.out.println("ilk driver");
                     break;
                 case "chrome-headless":
 
@@ -51,7 +51,6 @@ public class Driver {
                 default:
                     System.out.println("Please Select Opera Chrome or FireFOx");
             }
-
         }
         return driver;
     }
