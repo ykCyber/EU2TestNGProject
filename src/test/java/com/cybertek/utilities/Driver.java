@@ -12,16 +12,21 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class Driver {
+
+
     private static WebDriver driver;
+
+    private Driver() {
+    }
 
     public static WebDriver get() throws FileNotFoundException {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addExtensions(new File("C:\\Users\\Mustafa\\git\\EU2TestNGProject\\drivers\\chropath_6_1_4_0.crx"));
-        String browserType = ConfigurationReader.get("browser");
         if (driver == null) {
 
+            String browser = ConfigurationReader.get("browser");
 
-            switch (browserType.toLowerCase()) {
+            switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(chromeOptions);
@@ -43,10 +48,20 @@ public class Driver {
                     WebDriverManager.operadriver().setup();
                     driver = new OperaDriver();
                     break;
+                default:
+                    System.out.println("Please Select Opera Chrome or FireFOx");
             }
 
         }
         return driver;
     }
+
+    public static void closeDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }
 }
+
 
