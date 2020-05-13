@@ -20,7 +20,7 @@ public class Driver {
 
     public static WebDriver get() {
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addExtensions(new File("C:\\Users\\Mustafa\\git\\EU2TestNGProject\\drivers\\chropath_6_1_4_0.crx"));
+        chromeOptions.addExtensions(new File("C:\\Users\\mksimsir\\git\\EU2TestNGProject\\drivers\\chropath_6_1_4_0.crx"));
         if (driver == null) {
 
             String browser = ConfigurationReader.get("browser");
