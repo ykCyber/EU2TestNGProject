@@ -46,7 +46,7 @@ public class WebDriverFactory {
 
     public static WebDriver getDriver(String browserType) {
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addExtensions(new File("C:\\Users\\Mustafa\\git\\EU2TestNGProject\\drivers\\chropath_6_1_4_0.crx"));
+  //              chromeOptions.addExtensions(new File("C:\\Users\\mksimsir\\git\\EU2TestNGProject\\drivers\\chropath_6_1_4_0.crx"));
         if (driver == null) {
 
             switch (browserType.toLowerCase()) {
@@ -55,7 +55,7 @@ public class WebDriverFactory {
                     driver = new ChromeDriver();
                     break;
                 case "chrome-headless":
-                    chromeOptions.addExtensions(new File("C:\\Users\\Mustafa\\git\\EU2TestNGProject\\drivers\\chropath_6_1_4_0.crx"));
+    //                chromeOptions.addExtensions(new File("C:\\Users\\Mustafa\\git\\EU2TestNGProject\\drivers\\chropath_6_1_4_0.crx"));
 
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
