@@ -20,7 +20,12 @@ public class Driver {
 
     public static WebDriver get() {
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addExtensions(new File("C:\\Users\\mksimsir\\git\\EU2TestNGProject\\drivers\\chropath_6_1_4_0.crx"));
+
+        String projectPath = System.getProperty("user.dir");
+        String relativePath = "drivers\\chropath_6_1_4_0.crx";
+        System.out.println("relativePath = " + relativePath);
+        String filePath = (projectPath + "\\"+ relativePath);
+        chromeOptions.addExtensions(new File(filePath));
         if (driver == null) {
 
             String browser = ConfigurationReader.get("browser");
