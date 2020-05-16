@@ -6,9 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -34,51 +32,42 @@ public class SortByAny_header {
     }
 
     @Test
-    public void test() throws InterruptedException {
+    public void test() {
         driver.get("https://qa1.vytrack.com");
+        //login to page
         Base.login(driver, "User16");
         System.out.println("driver.getTitle() = " + driver.getTitle());
-        //driver.findElement(By.xpath("//span[@class='title title-level-1'][contains(text(),'Fleet')]")).click();
-        //driver.findElement(By.xpath("//li[@class='dropdown-menu-single-item first']//span[@class='title title-level-2'][contains(text(),'Vehicles')]")).click();
+        //Find Vehicles modules link
         String link = driver.findElement(By.xpath("//*[text()='Vehicles']/..")).getAttribute("href");
+        // goto link that u find
         driver.get(link);
         WebDriverWait wait = new WebDriverWait(driver, 10);
+        // locate loader frame
         WebElement loaderFrame = driver.findElement(By.className("loader-frame"));
+        // wait until loaderFrame is invisible
         wait.until(ExpectedConditions.invisibilityOf(loaderFrame));
         System.out.println("driver.getTitle() = " + driver.getTitle());
-        wait.until(ExpectedConditions.invisibilityOf(loaderFrame));
-        // driver.findElement(By.xpath("//i[@class='fa-cog hide-text']")).click();
-        // List<WebElement> elements = driver.findElements(By.xpath("//tbody[1]/tr/td/input"));
-        // WebElement iconToDrag = driver.findElement(By.xpath("//label[contains(text(),'Tax')]/../..//span//i"));
-        String oldUrl = driver.getCurrentUrl();
-        String headerTitle = "Color";
-        WebElement titleToSort = driver.findElement(By.xpath("//span[@class='grid-header-cell__label'][contains(text(),'"+headerTitle+"')]"));
+        //store url to wait
+        //String oldUrl = driver.getCurrentUrl();
+        String headerTitle = "Last Odometer";
+        // find the header which contains headerTitle
+        WebElement titleToSort = driver.findElement(By.xpath("//span[@class='grid-header-cell__label'][contains(text(),'" + headerTitle + "')]"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
+        // wait until titles are clickable
         wait.until(ExpectedConditions.elementToBeClickable(titleToSort));
+        //use js to click
         js.executeScript("arguments[0].click();", titleToSort);
         wait.until(ExpectedConditions.elementToBeClickable(titleToSort));
+        // second click to sort descending
         js.executeScript("arguments[0].click();", titleToSort);
-        wait.until(ExpectedConditions.urlContains(headerTitle));
-
-        List<WebElement> elements = driver.findElements(By.xpath("//td[@data-column-label='"+headerTitle+"']"));
+        //when we click any title grid Url changes wait until grid url changed to expected( don't forgot to remove spaces
+        wait.until(ExpectedConditions.urlContains(headerTitle.replace(" ", "")));
+        // now u can get the sorted list
+        List<WebElement> elements = driver.findElements(By.xpath("//td[@data-column-label='" + headerTitle + "']"));
         System.out.println(elements.size());
         int i = 0;
         for (WebElement element : elements) {
-            System.out.println("++i = " + ++i);
-            System.out.println("element.getText() = " + element.getText());
+            System.out.println("element.getText() line = "+ (++i)+" "+ element.getText());
         }
-
-//        Actions actions = new Actions(driver);
-//
-//        actions.moveToElement(iconToDrag).click().build().perform();
-//        WebElement id = driver.findElement(By.xpath("//tr[1]//td[2]//span[1]//i[1]"));
-//        Thread.sleep(2000);
-//        actions.dragAndDrop(iconToDrag, id).click().perform();
-//        Thread.sleep(2000);
-//        actions.click().build().perform();
-//        Thread.sleep(2000);
-
-
-        // jj.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//label[contains(text(),'Id')]")));
     }
 }
