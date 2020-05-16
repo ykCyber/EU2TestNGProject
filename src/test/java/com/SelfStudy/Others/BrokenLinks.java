@@ -19,7 +19,7 @@ public class BrokenLinks {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         driver = Driver.get();
-        Base.login(driver,"user16","UserUser123");
+        Base.login(driver,"user16");
         String homePage = "https://qa1.vytrack.com/";
         String url = "";
         HttpURLConnection huc = null;

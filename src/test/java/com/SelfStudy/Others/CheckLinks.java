@@ -5,6 +5,7 @@ import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -17,7 +18,7 @@ public class CheckLinks {
 
     @DataProvider
     public static Object[][] data() {
-        Base.login(driver, "user16", "UserUser123");
+        Base.login(driver, "user16");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 
@@ -45,6 +46,7 @@ public class CheckLinks {
     @Test(dataProvider = "data")
     public void Smoke(String title, String link){
         driver.get(link);
+        Assert.assertTrue(driver.getTitle().contains(title)," "+driver.getTitle());
 
     }
 

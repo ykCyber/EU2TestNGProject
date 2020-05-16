@@ -6,13 +6,13 @@ import org.openqa.selenium.WebDriver;
 
 public class Base {
     public static String USER_ID;
-    public static String PASSWORD;
+    public static String PASSWORD= "UserUser123";
 
-    public static void login(WebDriver driver, String userID, String password) {
+    public static void login(WebDriver driver, String userID) {
        driver.get("https://qa1.vytrack.com");
         String userIdBoxXpath = "prependedInput";
         driver.findElement(By.id(userIdBoxXpath)).sendKeys(userID);
-        driver.findElement(By.id("prependedInput2")).sendKeys(password, Keys.ENTER);
+        driver.findElement(By.id("prependedInput2")).sendKeys(PASSWORD, Keys.ENTER);
     }
 
 
@@ -21,4 +21,5 @@ public class Base {
         driver.findElement(By.linkText("Logout")).click();
         System.out.println("Logout from " + driver.getTitle());
     }
+
 }

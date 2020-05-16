@@ -28,7 +28,7 @@ public class JavaScriptClick {
     public void test() throws InterruptedException {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get("https://qa1.vytrack.com");
-        Base.login(driver, "salesmanager116", "UserUser123");
+        Base.login(driver, "salesmanager116");
         driver.findElement(By.xpath("//span[contains(text(),'Fleet')]")).click();
         Thread.sleep(200);
 
