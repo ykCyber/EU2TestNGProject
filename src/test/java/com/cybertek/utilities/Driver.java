@@ -34,7 +34,6 @@ public class Driver {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(chromeOptions);
-                    System.out.println("ilk driver");
                     break;
                 case "chrome-headless":
 
