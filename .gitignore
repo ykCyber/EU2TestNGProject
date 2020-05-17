@@ -1,3 +1,5 @@
 .test-output/
 /target/
 /src/test/java/com/SelfStudy/Others/canerKanka.java
+\test-output
+\.idea
