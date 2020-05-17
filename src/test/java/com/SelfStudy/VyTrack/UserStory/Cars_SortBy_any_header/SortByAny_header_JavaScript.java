@@ -8,14 +8,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
- import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class SortByAny_header {
+public class SortByAny_header_JavaScript {
     WebDriver driver = Driver.get();
 
     @BeforeMethod
@@ -67,7 +67,7 @@ public class SortByAny_header {
         System.out.println(elements.size());
         int i = 0;
         for (WebElement element : elements) {
-            System.out.println("element.getText() line = "+ (++i)+" "+ element.getText());
+            System.out.println("element.getText() line = " + (++i) + " " + element.getText());
         }
     }
 }
