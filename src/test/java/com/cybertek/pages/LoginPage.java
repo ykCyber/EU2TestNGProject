@@ -9,17 +9,17 @@ public class LoginPage {
 
 
     @FindBy(id = "prependedInput")
-    public static WebElement usernameInput;
+    public  WebElement usernameInput;
     @FindBy(id = "prependedInput2")
-    public static WebElement passwordInput;
+    public  WebElement passwordInput;
     @FindBy(id = "_submit")
-    public static WebElement loginBtn;
+    public  WebElement loginBtn;
 
     public LoginPage() {
         PageFactory.initElements((Driver.get()), this);
     }
 
-    public static void login(String usernameStr, String passwordStr) {
+    public  void login(String usernameStr, String passwordStr) {
         usernameInput.sendKeys(usernameStr);
         passwordInput.sendKeys(passwordStr);
         loginBtn.click();

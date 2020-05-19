@@ -11,7 +11,7 @@ import org.openqa.selenium.opera.OperaDriver;
 import java.io.File;
 
 public class Driver {
-
+    static int counter= 0;
 
     private static WebDriver driver;
 
@@ -19,11 +19,13 @@ public class Driver {
     }
 
     public static WebDriver get() {
+        counter++;
+
         ChromeOptions chromeOptions = new ChromeOptions();
 
         String projectPath = System.getProperty("user.dir");
         String relativePath = "drivers\\chropath_6_1_4_0.crx";
-        System.out.println("relativePath = " + relativePath);
+        System.out.println("Chrome is launching with ChroPath..." + counter);
         String filePath = (projectPath + "\\"+ relativePath);
         chromeOptions.addExtensions(new File(filePath));
         if (driver == null) {

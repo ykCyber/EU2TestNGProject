@@ -6,9 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class Base extends TestBase {
-    public static String USER_ID;
+    public  static String USER_ID = null;
     public static String PASSWORD = "UserUser123";
-
     public static void login(WebDriver driver, String userID) {
         LoginPage loginPage = new LoginPage();
 
@@ -23,7 +22,6 @@ public class Base extends TestBase {
 
         loginPage.usernameInput.sendKeys(userID);
         loginPage.passwordInput.sendKeys(userPassword);
-
         loginPage.loginBtn.click();
     }
 
