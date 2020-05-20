@@ -1,6 +1,6 @@
 package com.SelfStudy.VyTrack.UserStory14_VehicleModel;
 
-import com.cybertek.utilities.Base;
+import com.cybertek.pages.Base;
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
-import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
 import static java.lang.Thread.sleep;

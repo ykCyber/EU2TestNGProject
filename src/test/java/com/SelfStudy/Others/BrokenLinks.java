@@ -1,6 +1,6 @@
 //package com.SelfStudy.Others;
 //
-//import com.cybertek.utilities.Base;
+//import com.cybertek.pages.Base;
 //import com.cybertek.utilities.Driver;
 //import org.openqa.selenium.By;
 //import org.openqa.selenium.WebDriver;

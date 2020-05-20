@@ -1,6 +1,6 @@
 package com.cybertek.tests.day014_driver_class;
 
-import com.cybertek.utilities.Base;
+import com.cybertek.pages.Base;
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.WebDriver;

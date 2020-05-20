@@ -1,4 +1,4 @@
-package com.cybertek.utilities;
+package com.cybertek.pages;
 
 import com.cybertek.pages.LoginPage;
 import com.cybertek.tests.TestBase;

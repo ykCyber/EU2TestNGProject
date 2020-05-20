@@ -33,9 +33,9 @@ public class findTrends {
         List<WebElement> trends = driver.findElements(By.xpath("//section[1]/div[1]/div[1]"));
         for (WebElement trend : trends) {
             System.out.println("trend.getText() = " + trend.getText());
-            trend.click();
+          //  trend.click();
             List<WebElement> elements = driver.findElements(By.xpath(numOfLikesXpath));
-            elements.get(0).click();
+           // elements.get(0).click();
             Thread.sleep(1000);
             break;
         }
